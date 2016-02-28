@@ -1,9 +1,9 @@
 //counter.ts
 import {Reducer, Action} from '@ngrx/store';
-
-export const PLANETS_REQUEST = 'PLANETS_REQUEST';
-export const PLANETS_SUCCESS = 'PLANETS_SUCCESS';
-export const PLANETS_FAILURE = 'PLANETS_FAILURE';
+import {
+    PLANETS_REQUEST,
+    PLANETS_SUCCESS
+} from '../constants/planets';
 
 interface PS {
     isFetching: boolean;
