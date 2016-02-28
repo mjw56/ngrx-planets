@@ -4,7 +4,12 @@
   "description": "ngrx demo",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run typings",
+    "tsc": "tsc",
+    "tsc:w": "tsc --watch",
+    "serve": "lite-server",
+    "start": "npm run build && concurrent \"npm run tsc:w\" \"npm run serve\" ",
+    "typings": "typings install"
   },
   "keywords": [
     "angular2",
@@ -24,7 +29,10 @@
     "zone.js": "^0.5.15"
   },
   "devDependencies": {
+    "concurrently": "^2.0.0",
+    "lite-server": "^2.1.0",
     "systemjs": "^0.19.23",
-    "typescript": "^1.8.2"
+    "typescript": "^1.8.2",
+    "typings": "^0.6.8"
   }
 }
