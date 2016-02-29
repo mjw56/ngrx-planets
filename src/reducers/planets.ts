@@ -5,17 +5,17 @@ import {
     PLANETS_SUCCESS
 } from '../constants/planets';
 
-interface PS {
+export interface PlanetState {
     isFetching: boolean;
     planets?: string[];
 }
 
-const initialState: PS = {
+const initialState: PlanetState = {
     isFetching: false,
     planets: []
 }
 
-export const planets:Reducer<PS> = (state: PS = initialState, action: Action) => {
+export const planets:Reducer<PlanetState> = (state: PlanetState = initialState, action: Action) => {
     switch (action.type) {
         case PLANETS_REQUEST:
             return {
