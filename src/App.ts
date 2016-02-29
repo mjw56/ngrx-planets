@@ -2,6 +2,7 @@ import { Component } from 'angular2/core';
 import { bootstrap } from 'angular2/platform/browser';
 import { provideStore } from '@ngrx/store';
 import { planets } from './reducers/planets';
+import { APP_ACTIONS } from "./actions/index";
 
 @Component({
     selector: 'ngrx-planets',
@@ -14,11 +15,12 @@ export class NgRxPlanets {
 export function main() {
   return bootstrap(
       NgRxPlanets, 
-      [ 
-          provideStore(
-            { planets }, 
-            { isFetching: false, planets: [] }
-          ) 
+      [
+        APP_ACTIONS, 
+        provideStore(
+          { planets }, 
+          { isFetching: false, planets: [] }
+        ) 
       ]
   )
   .catch(err => console.error(err));
