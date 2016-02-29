@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin  = require('html-webpack-plugin');
+var CopyWebpackPlugin  = require('copy-webpack-plugin');
 
 var ENV = process.env.ENV = process.env.NODE_ENV = 'development';
 
@@ -61,6 +62,8 @@ module.exports = {
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(true),
     new webpack.optimize.CommonsChunkPlugin({ name: 'prolyfills', filename: 'prolyfills.bundle.js', minChunks: Infinity }),
+    // static assets
+    new CopyWebpackPlugin([ { from: 'assets', to: 'assets' } ]),
     // generating html
     new HtmlWebpackPlugin({ template: 'src/index.html', inject: false }),
     // replace
