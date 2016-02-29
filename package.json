@@ -27,6 +27,7 @@
     "zone.js": "^0.5.15"
   },
   "devDependencies": {
+    "copy-webpack-plugin": "^1.1.1",
     "es6-promise-loader": "^1.0.1",
     "html-webpack-plugin": "^1.7.0",
     "json-loader": "^0.5.4",
